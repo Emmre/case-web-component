@@ -39,6 +39,7 @@ export class EmployeeList extends LitElement {
     });
   }
 
+
   get paginatedEmployees() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     const end = this.currentPage * this.itemsPerPage;
@@ -46,6 +47,7 @@ export class EmployeeList extends LitElement {
   }
 
   updateSearchTerm(e) {
+    this.currentPage = 1;
     this.searchTerm = e.target.value;
   }
 
@@ -67,7 +69,7 @@ export class EmployeeList extends LitElement {
         get('confirmDelete', {
           firstName: employee.firstName,
           lastName: employee.lastName,
-        })
+        }),
       )
     ) {
       deleteEmployee(employee.id);
@@ -92,12 +94,14 @@ export class EmployeeList extends LitElement {
       </div>
 
       ${this.viewMode === 'list'
-        ? html` <employee-list-view
+        ? html`
+          <employee-list-view
             .employees="${this.paginatedEmployees}"
             .editEmployee="${this.editEmployee.bind(this)}"
             .deleteEmployee="${this.deleteEmployee.bind(this)}"
           ></employee-list-view>`
-        : html` <employee-table-view
+        : html`
+          <employee-table-view
             .employees="${this.paginatedEmployees}"
             .editEmployee="${this.editEmployee.bind(this)}"
             .deleteEmployee="${this.deleteEmployee.bind(this)}"
@@ -107,15 +111,16 @@ export class EmployeeList extends LitElement {
         ${Array.from(
           {
             length: Math.ceil(
-              this.filteredEmployees.length / this.itemsPerPage
+              this.filteredEmployees.length / this.itemsPerPage,
             ),
           },
-          (_, i) => i + 1
+          (_, i) => i + 1,
         ).map(
           page =>
-            html` <button @click="${() => this.changePage(page)}">
-              ${page}
-            </button>`
+            html`
+              <button @click="${() => this.changePage(page)}">
+                ${page}
+              </button>`,
         )}
       </div>
     `;
