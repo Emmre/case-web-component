@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+button,
+select {
+  background-color: #fff;
+  color: #4caf50;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
