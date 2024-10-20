@@ -20,6 +20,7 @@
   "submit": "Add",
   "employeeAdded": "Employee added.",
   "confirmUpdate": "Are you sure you want to update this employee record?",
+  "confirmAdd": "Are you sure you want to add this employee record?",
   "futureDateOfEmployment": "Date of Employment cannot be a future date.",
   "futureDateOfBirth": "Date of Birth cannot be a future date.",
   "invalidDateOrder": "Date of Birth must be before Date of Employment.",

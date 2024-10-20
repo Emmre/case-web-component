@@ -69,7 +69,8 @@ export class EmployeeForm extends LitElement {
       return;
     }
 
-    const confirmation = confirm(get('confirmUpdate'));
+    const confirmationText = this.isEdit ? 'confirmUpdate' : 'confirmAdd';
+    const confirmation = confirm(get(confirmationText));
 
     if (confirmation) {
       if (this.isEdit) {

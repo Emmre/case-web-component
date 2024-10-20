@@ -20,6 +20,7 @@
   "submit": "Ekle",
   "employeeAdded": "Çalışan eklendi.",
   "confirmUpdate": "Bu çalışan kaydını güncellemek istediğinize emin misiniz?",
+  "confirmAdd": "Bu çalışan kaydını eklemek istediğinize emin misiniz?",
   "futureDateOfEmployment": "İşe başlama tarihi gelecekte olamaz.",
   "futureDateOfBirth": "Doğum tarihi gelecekte olamaz.",
   "invalidDateOrder": "Doğum tarihi, işe başlama tarihinden önce olmalıdır.",
